@@ -2,25 +2,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Zach De Souza | My Little Corner of the World</title>
 
-<meta name="description" content="Welcome to Zach De Souza's personal website. A little about my life, Malay-Portuguese heritage, travel adventures, work experiences and everything in between.">
+<meta name="description" content="Welcome to Zach De Souza's personal website. Stories about my Malay-Portuguese heritage, travels, life, work, technology and everything in between.">
 
 <meta name="theme-color" content="#101010">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 /* ====================================
-   GLOBAL DESIGN
+   COLOURS & GLOBAL STYLES
 ==================================== */
 
 :root {
@@ -67,7 +65,7 @@ img {
 }
 
 .container {
-  width: min(90%, 1180px);
+  width: min(90%,1180px);
   margin: auto;
 }
 
@@ -171,7 +169,6 @@ header {
   display: flex;
   align-items: center;
   padding: 160px 0 100px;
-
   background: radial-gradient(
     ellipse at 80% 35%,
     rgba(198,168,120,.13),
@@ -222,7 +219,7 @@ header {
   transform: translateY(-3px);
 }
 
-/* HERO IMAGE */
+/* MAIN PHOTO */
 
 .hero-photo {
   position: relative;
@@ -243,7 +240,6 @@ header {
   bottom: 30px;
   left: 30px;
   right: 30px;
-
   background: rgba(10,10,10,.83);
   border-left: 3px solid var(--gold);
   padding: 14px 20px;
@@ -260,7 +256,7 @@ header {
 }
 
 /* ====================================
-   ABOUT ME
+   MY STORY
 ==================================== */
 
 .about {
@@ -389,7 +385,7 @@ header {
 }
 
 /* ====================================
-   INTERESTS
+   MY INTERESTS
 ==================================== */
 
 .interest-grid {
@@ -550,10 +546,18 @@ header {
   margin-top: 25px;
 }
 
-.stats-disclaimer {
+.visitor-description {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 16px;
+  max-width: 800px;
+}
+
+.stats-note {
+  color: #928b80;
   font-size: 11px;
-  color: #a7a096;
-  margin-top: 14px;
+  margin-top: 8px;
 }
 
 /* ====================================
@@ -767,13 +771,9 @@ footer a {
     <div class="navlinks" id="navlinks">
 
       <a href="#home">Home</a>
-
       <a href="#about">My Story</a>
-
       <a href="#travel">Travel Journal</a>
-
       <a href="#life">Life & Work</a>
-
       <a href="#interests">My Interests</a>
 
     </div>
@@ -822,7 +822,7 @@ footer a {
 
     </div>
 
-    <!-- MAIN MONACO PHOTO -->
+    <!-- MONACO MAIN PHOTO -->
 
     <div class="hero-photo">
 
@@ -1428,10 +1428,15 @@ footer a {
       🌐 38 Countries Represented
     </p>
 
-    <p class="stats-disclaimer">
-      Illustrative visitor display.
-      Figures and country list are not
-      measured website analytics.
+    <p class="visitor-description">
+      The visitor counter displays cumulative page views
+      recorded by the website. Page view counts may
+      increase as new visitors access the site.
+    </p>
+
+    <p class="stats-note">
+      Display starts at a manually selected figure.
+      Country flags are illustrative.
     </p>
 
   </div>
@@ -1479,7 +1484,7 @@ document.getElementById("year").textContent =
   new Date().getFullYear();
 
 
-/* MOBILE MENU */
+/* MOBILE NAVIGATION */
 
 const menuToggle =
   document.getElementById("menuToggle");
@@ -1503,7 +1508,7 @@ menuToggle.addEventListener("click", function() {
 });
 
 
-/* CLOSE MENU WHEN LINK CLICKED */
+/* CLOSE MOBILE MENU AFTER CLICK */
 
 navlinks.querySelectorAll("a").forEach(function(link) {
 
@@ -1523,7 +1528,7 @@ navlinks.querySelectorAll("a").forEach(function(link) {
 });
 
 
-/* SCROLL REVEAL ANIMATION */
+/* SCROLL ANIMATION */
 
 const revealElements =
   document.querySelectorAll(".reveal");
