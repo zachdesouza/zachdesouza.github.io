@@ -1,0 +1,1112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Zach De Souza | Corporate Communications, Branding and Digital Storytelling">
+<meta name="theme-color" content="#0d0d0e">
+<title>Zach De Souza | Communications & Creative Strategy</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0d0d0e;
+  --surface: #161616;
+  --gold: #c6a878;
+  --gold-dark: #8d744e;
+  --text: #f4f0e8;
+  --muted: #a9a59e;
+  --border: rgba(198,168,120,.2);
+  --max: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', Arial, sans-serif;
+  line-height: 1.65;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+.container {
+  width: min(calc(100% - 48px), var(--max));
+  margin: auto;
+}
+
+.serif {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+}
+
+.accent { color: var(--gold); }
+
+.eyebrow {
+  font-size: .73rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+h1, h2, h3, p { margin-top: 0; }
+
+h2 {
+  font-size: clamp(2rem,4vw,3.65rem);
+  line-height: 1.16;
+  letter-spacing: -.035em;
+  margin-bottom: 1.2rem;
+}
+
+p { color: var(--muted); }
+
+/* NAVIGATION */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  background: rgba(13,13,14,.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+.nav {
+  height: 83px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: .17em;
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+
+.brand span { color: var(--gold); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-size: .83rem;
+  color: #d6d1c9;
+  transition: color .2s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.nav-cta {
+  border: 1px solid var(--gold);
+  color: var(--gold) !important;
+  padding: 10px 18px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  padding: 8px 11px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 770px;
+  display: flex;
+  align-items: center;
+  padding: 170px 0 110px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  right: -12%;
+  top: 0;
+  width: 65%;
+  height: 100%;
+  z-index: -2;
+  background: radial-gradient(
+    ellipse at 60% 48%,
+    rgba(143,104,49,.2),
+    transparent 52%
+  );
+}
+
+.hero::after {
+  content: "Z";
+  position: absolute;
+  right: 3%;
+  top: 10%;
+  font-family: Georgia, serif;
+  font-size: clamp(350px,56vw,900px);
+  line-height: 1;
+  color: rgba(198,168,120,.035);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: 52px;
+}
+
+.hero h1 {
+  font-size: clamp(4.1rem,8vw,8rem);
+  line-height: .98;
+  letter-spacing: -.06em;
+  margin: 20px 0 28px;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--gold);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem,1.6vw,1.24rem);
+  max-width: 550px;
+  margin-bottom: 36px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 22px;
+  font-size: .86rem;
+  font-weight: 700;
+  border: 1px solid var(--gold);
+  transition: transform .2s, background .2s;
+  cursor: pointer;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--gold);
+  color: #15120c;
+}
+
+.btn-primary:hover { background: #e0c291; }
+
+.btn-ghost { color: var(--gold); }
+
+.btn-ghost:hover {
+  background: rgba(198,168,120,.1);
+}
+
+.hero-portrait {
+  min-height: 500px;
+  position: relative;
+  border: 1px solid var(--border);
+  background: linear-gradient(155deg,#29251e,#121212 72%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-portrait img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 27%;
+}
+
+.portrait-placeholder {
+  padding: 35px;
+  text-align: center;
+  color: #bcb2a2;
+}
+
+.portrait-placeholder svg {
+  width: 90px;
+  display: block;
+  margin: auto auto 20px;
+  opacity: .45;
+}
+
+.portrait-badge {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  right: 22px;
+  padding: 14px 18px;
+  background: rgba(16,16,16,.8);
+  backdrop-filter: blur(12px);
+  font-size: .77rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--gold);
+  border-left: 2px solid var(--gold);
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 30px;
+  left: 5%;
+  color: #8e8677;
+  font-size: .72rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+/* SECTIONS */
+
+section { padding: 115px 0; }
+
+.section-intro {
+  max-width: 680px;
+  margin-bottom: 45px;
+}
+
+/* ABOUT */
+
+.about {
+  background: #141414;
+  border-block: 1px solid rgba(255,255,255,.05);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 85px;
+  align-items: start;
+}
+
+.about .lead {
+  font-size: 1.2rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.stats {
+  display: flex;
+  gap: 42px;
+  margin-top: 38px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.stat strong {
+  display: block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+/* EXPERTISE */
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+}
+
+.expertise-card {
+  background: linear-gradient(135deg,#1a1917,#131313);
+  padding: 34px 29px;
+  min-height: 225px;
+  border: 1px solid rgba(255,255,255,.07);
+  transition: transform .25s, border-color .25s;
+}
+
+.expertise-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-dark);
+}
+
+.expertise-number {
+  font-size: .78rem;
+  color: var(--gold);
+  letter-spacing: .12em;
+}
+
+.expertise-card h3 {
+  font-size: 1.12rem;
+  margin: 36px 0 12px;
+}
+
+.expertise-card p {
+  font-size: .91rem;
+  margin: 0;
+}
+
+/* PORTFOLIO */
+
+.work { background: #141414; }
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.work-card {
+  background: #1d1c1a;
+  border: 1px solid rgba(255,255,255,.08);
+  overflow: hidden;
+}
+
+.work-art {
+  height: 210px;
+  padding: 28px;
+  display: flex;
+  align-items: flex-end;
+  background:
+    radial-gradient(circle at 75% 25%,
+    rgba(198,168,120,.22),transparent 48%),
+    linear-gradient(135deg,#302a21,#121212);
+}
+
+.work-art strong {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.3rem;
+  line-height: 1.1;
+  color: #e7dccb;
+  font-weight: 500;
+}
+
+.work-card:nth-child(2) .work-art {
+  background: linear-gradient(150deg,#171717,#3b3024);
+}
+
+.work-card:nth-child(3) .work-art {
+  background: linear-gradient(145deg,#2a2723,#101010);
+}
+
+.work-content { padding: 25px; }
+
+.work-content h3 {
+  font-size: 1.04rem;
+  margin: 9px 0;
+}
+
+.work-content p {
+  font-size: .87rem;
+  margin-bottom: 0;
+}
+
+.work-note {
+  margin-top: 25px;
+  font-size: .83rem;
+}
+
+/* QUOTE */
+
+.quote-section {
+  padding: 88px 0;
+  text-align: center;
+  border-block: 1px solid var(--border);
+}
+
+.quote {
+  max-width: 880px;
+  margin: auto;
+  font: 500 clamp(1.7rem,3.5vw,3rem)/1.45
+    'Playfair Display',Georgia,serif;
+  color: var(--text);
+}
+
+/* CONTACT */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 80px;
+}
+
+.contact-links {
+  border-top: 1px solid var(--border);
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .94rem;
+  transition: color .2s;
+}
+
+.contact-link:hover { color: var(--gold); }
+
+.contact-link .arrow { color: var(--gold); }
+
+.contact-note {
+  font-size: .83rem;
+  margin-top: 20px;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 32px 0;
+  border-top: 1px solid rgba(255,255,255,.09);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  font-size: .78rem;
+  color: #918b81;
+}
+
+.footer-inner p { margin: 0; }
+
+.back-top { color: var(--gold); }
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s, transform .7s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* TABLET */
+
+@media(max-width:900px) {
+  .hero-layout { grid-template-columns: 1fr; }
+  .hero { padding-top: 140px; }
+  .hero-portrait {
+    min-height: 440px;
+    max-width: 550px;
+    width: 100%;
+  }
+  .about-grid,.contact-layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .expertise-grid,.work-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+  .nav-links { gap: 18px; }
+}
+
+/* MOBILE */
+
+@media(max-width:650px) {
+  .container {
+    width: calc(100% - 36px);
+  }
+  .nav { height: 70px; }
+  .menu-toggle { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #141414;
+    border-bottom: 1px solid var(--border);
+    padding: 18px 24px 26px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .nav-links.open { display: flex; }
+  .nav-cta { text-align: center; }
+
+  .hero {
+    padding: 120px 0 75px;
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.5rem,14vw,5.6rem);
+  }
+
+  .hero-layout { gap: 42px; }
+  .hero-portrait { min-height: 360px; }
+  .scroll-hint { display: none; }
+  section { padding: 75px 0; }
+
+  .expertise-grid,.work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats { gap: 25px; flex-wrap: wrap; }
+  .quote-section { padding: 65px 0; }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="site-header">
+  <nav class="container nav" aria-label="Main navigation">
+
+    <a class="brand" href="#home">
+      ZACH<span>.</span>DE SOUZA
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-expanded="false" aria-controls="navLinks">
+      ☰ Menu
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#work">Selected Work</a>
+      <a href="#contact" class="nav-cta">Let's Connect ↗</a>
+    </div>
+
+  </nav>
+</header>
+
+<main>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+  <div class="container hero-layout">
+
+    <div class="hero-copy">
+
+      <div class="eyebrow">
+        Communications • Branding • Digital
+      </div>
+
+      <h1 class="serif">
+        Zach <span>De Souza.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        I shape stories, build connections and turn
+        ideas into communications that people remember.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">
+          Explore My Work ↗
+        </a>
+
+        <a href="#about" class="btn btn-ghost">
+          More About Me ↓
+        </a>
+      </div>
+
+    </div>
+
+    <div class="hero-portrait">
+
+      <!--
+        To add your photo:
+        Upload a photo named portrait.jpg
+        into the same GitHub repository.
+        It will automatically appear here.
+      -->
+
+      <div class="portrait-placeholder"
+           id="portraitPlaceholder">
+
+        <svg viewBox="0 0 100 100"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true">
+          <circle cx="50" cy="34" r="20"/>
+          <path d="M13 94c0-25 17-39 37-39s37 14 37 39"/>
+        </svg>
+
+        <p>
+          Your portrait goes here.
+          Upload a photo named portrait.jpg
+        </p>
+
+      </div>
+
+      <div class="portrait-badge">
+        Words. Ideas. Impact.
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="scroll-hint">
+    Scroll to discover ↓
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+  <div class="container about-grid">
+
+    <div class="reveal">
+      <div class="eyebrow">01 / About Me</div>
+
+      <h2 class="serif">
+        A little about
+        <span class="accent">my story.</span>
+      </h2>
+    </div>
+
+    <div class="reveal">
+
+      <p class="lead">
+        I'm a communications professional with more than
+        18 years of experience across corporate
+        communications, stakeholder engagement,
+        marketing and brand storytelling.
+      </p>
+
+      <p>
+        My work sits where strategy meets creativity.
+        From shaping messages and managing media
+        relations to building digital experiences and
+        bringing events to life, I believe good
+        communication starts with understanding people.
+      </p>
+
+      <p>
+        This space is a collection of the work, ideas
+        and experiences that continue to shape my journey.
+      </p>
+
+      <div class="stats">
+
+        <div class="stat">
+          <strong>18+</strong>
+          <span>Years of experience</span>
+        </div>
+
+        <div class="stat">
+          <strong>360°</strong>
+          <span>Communications perspective</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+
+<section id="expertise">
+  <div class="container">
+
+    <div class="section-intro reveal">
+      <div class="eyebrow">02 / What I Do</div>
+
+      <h2 class="serif">
+        Where strategy meets
+        <span class="accent">creativity.</span>
+      </h2>
+
+      <p>
+        Different channels, one goal: communication
+        that is clear, relevant and worth paying
+        attention to.
+      </p>
+    </div>
+
+    <div class="expertise-grid">
+
+      <article class="expertise-card reveal">
+        <div class="expertise-number">01</div>
+        <h3>Corporate Communications</h3>
+        <p>
+          Internal and external messaging, corporate
+          positioning and reputation.
+        </p>
+      </article>
+
+      <article class="expertise-card reveal">
+        <div class="expertise-number">02</div>
+        <h3>Media & Public Relations</h3>
+        <p>
+          Media engagement, press materials and stories
+          built on substance.
+        </p>
+      </article>
+
+      <article class="expertise-card reveal">
+        <div class="expertise-number">03</div>
+        <h3>Brand & Content Strategy</h3>
+        <p>
+          Brand voice, campaign ideas and content
+          that connects with audiences.
+        </p>
+      </article>
+
+      <article class="expertise-card reveal">
+        <div class="expertise-number">04</div>
+        <h3>Digital Communications</h3>
+        <p>
+          Web experiences, social media and practical
+          digital solutions.
+        </p>
+      </article>
+
+      <article class="expertise-card reveal">
+        <div class="expertise-number">05</div>
+        <h3>Events & Campaigns</h3>
+        <p>
+          End-to-end communications for launches,
+          programmes and events.
+        </p>
+      </article>
+
+      <article class="expertise-card reveal">
+        <div class="expertise-number">06</div>
+        <h3>Stakeholder Engagement</h3>
+        <p>
+          Building trust through purposeful
+          conversations and relationships.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+
+<section class="work" id="work">
+  <div class="container">
+
+    <div class="section-intro reveal">
+      <div class="eyebrow">03 / Selected Work</div>
+
+      <h2 class="serif">
+        The work behind
+        <span class="accent">the words.</span>
+      </h2>
+
+      <p>
+        A few areas of work I enjoy.
+        Individual project stories and images
+        can be added here as the portfolio grows.
+      </p>
+    </div>
+
+    <div class="work-grid">
+
+      <article class="work-card reveal">
+        <div class="work-art">
+          <strong>Brand<br>Stories.</strong>
+        </div>
+
+        <div class="work-content">
+          <div class="eyebrow">Communications</div>
+          <h3>Corporate Storytelling</h3>
+          <p>
+            Crafting messages that bring organisations,
+            people and ideas closer together.
+          </p>
+        </div>
+      </article>
+
+      <article class="work-card reveal">
+        <div class="work-art">
+          <strong>Digital<br>Ideas.</strong>
+        </div>
+
+        <div class="work-content">
+          <div class="eyebrow">Digital</div>
+          <h3>Web & Content Experiences</h3>
+          <p>
+            Making information more useful,
+            approachable and engaging online.
+          </p>
+        </div>
+      </article>
+
+      <article class="work-card reveal">
+        <div class="work-art">
+          <strong>Real<br>Connections.</strong>
+        </div>
+
+        <div class="work-content">
+          <div class="eyebrow">Engagement</div>
+          <h3>Events & Campaigns</h3>
+          <p>
+            Connecting people through well-planned
+            campaigns and live experiences.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="work-note">
+      Portfolio categories are illustrative.
+      Replace these with your own published work
+      before sharing the site widely.
+    </p>
+
+  </div>
+</section>
+
+<!-- PERSONAL QUOTE -->
+
+<section class="quote-section">
+  <div class="container">
+
+    <div class="eyebrow">
+      A thought I keep coming back to
+    </div>
+
+    <p class="quote">
+      “The best communication doesn't just get noticed.
+      It makes people
+      <span class="accent">feel something.</span>”
+    </p>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+  <div class="container contact-layout">
+
+    <div class="reveal">
+
+      <div class="eyebrow">04 / Get In Touch</div>
+
+      <h2 class="serif">
+        Have an idea?
+        <span class="accent">Let's talk.</span>
+      </h2>
+
+      <p>
+        Whether it's a collaboration, a conversation
+        about communications or simply saying hello,
+        I'd be happy to connect.
+      </p>
+
+      <!-- REPLACE THE EMAIL BELOW -->
+
+      <a href="mailto:hello@example.com?subject=Hello%20Zach"
+         class="btn btn-primary">
+        Send Me a Message ↗
+      </a>
+
+      <p class="contact-note">
+        Replace hello@example.com with your actual
+        email address before publishing.
+      </p>
+
+    </div>
+
+    <div class="reveal">
+
+      <div class="contact-links">
+
+        <a class="contact-link"
+           href="mailto:hello@example.com">
+          <span>Email Me</span>
+          <span class="arrow">↗</span>
+        </a>
+
+        <!-- REPLACE WITH YOUR LINKEDIN URL -->
+
+        <a class="contact-link"
+           href="https://www.linkedin.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+          <span>LinkedIn</span>
+          <span class="arrow">↗</span>
+        </a>
+
+        <!-- REPLACE WITH YOUR INSTAGRAM URL -->
+
+        <a class="contact-link"
+           href="https://www.instagram.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+          <span>Instagram</span>
+          <span class="arrow">↗</span>
+        </a>
+
+      </div>
+
+      <p class="contact-note">
+        Update the social links with your
+        personal profile addresses.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container footer-inner">
+
+    <p>
+      © <span id="year"></span>
+      Zach De Souza. All rights reserved.
+    </p>
+
+    <p>
+      Made with purpose, not a template subscription.
+    </p>
+
+    <a href="#home" class="back-top">
+      Back to top ↑
+    </a>
+
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// Automatically update copyright year
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+// Mobile navigation
+
+const menu = document.getElementById("menuToggle");
+const links = document.getElementById("navLinks");
+
+menu.addEventListener("click", () => {
+  const opened = links.classList.toggle("open");
+
+  menu.setAttribute("aria-expanded", String(opened));
+
+  menu.textContent = opened
+    ? "✕ Close"
+    : "☰ Menu";
+});
+
+links.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    links.classList.remove("open");
+    menu.setAttribute("aria-expanded", "false");
+    menu.textContent = "☰ Menu";
+  });
+});
+
+// Scroll reveal animation
+
+if ("IntersectionObserver" in window) {
+
+  const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll(".reveal").forEach(el => {
+    observer.observe(el);
+  });
+
+} else {
+
+  document.querySelectorAll(".reveal").forEach(el => {
+    el.classList.add("visible");
+  });
+
+}
+
+// Load your portrait automatically
+
+const portrait = new Image();
+
+portrait.onload = () => {
+  portrait.alt = "Portrait of Zach De Souza";
+
+  const container =
+    document.querySelector(".hero-portrait");
+
+  const placeholder =
+    document.getElementById("portraitPlaceholder");
+
+  container.insertBefore(portrait, placeholder);
+  placeholder.remove();
+};
+
+portrait.src = "portrait.jpg";
+
+</script>
+
+</body>
+</html>
