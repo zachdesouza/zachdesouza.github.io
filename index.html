@@ -3,59 +3,57 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Zach De Souza | My Little Corner of the World</title>
 
-<meta name="description" content="The personal website of Zach De Souza. Stories about life, travel, heritage, work, technology and everything in between.">
+<meta name="description" content="The personal website of Zach De Souza. My life, Malay-Portuguese heritage, travels, work, technology and stories along the way.">
 
 <meta name="theme-color" content="#101010">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* =============================
-   COLOURS & GENERAL STYLES
-============================= */
+/* GENERAL */
 
 :root {
   --bg: #101010;
-  --bg-soft: #171717;
-  --bg-card: #1e1d1b;
+  --soft: #181817;
+  --card: #201e1b;
   --gold: #c6a878;
-  --gold-light: #e4cda7;
-  --white: #f4f1eb;
-  --muted: #b5b0a7;
-  --border: rgba(198,168,120,0.2);
-  --max: 1180px;
+  --gold-light: #e6d0ac;
+  --white: #f5f1e9;
+  --muted: #b6b0a5;
+  --border: rgba(198,168,120,.22);
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 85px;
+  scroll-padding-top: 90px;
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  margin: 0;
   background: var(--bg);
   color: var(--white);
-  line-height: 1.75;
-  overflow-x: hidden;
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.8;
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
 }
 
 img {
@@ -63,744 +61,596 @@ img {
   display: block;
 }
 
-button {
-  font: inherit;
-}
-
 .container {
-  width: min(90%, var(--max));
+  width: min(90%,1180px);
   margin: auto;
-}
-
-.serif {
-  font-family: 'Playfair Display', Georgia, serif;
 }
 
 .gold {
   color: var(--gold);
 }
 
-.small-title {
-  display: block;
+.serif {
+  font-family: "Playfair Display",Georgia,serif;
+}
+
+.eyebrow {
   color: var(--gold);
   font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 20px;
 }
 
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(34px, 5vw, 58px);
+.section-heading {
+  font-family: "Playfair Display",Georgia,serif;
   font-weight: 500;
-  line-height: 1.25;
-  margin-bottom: 25px;
+  font-size: clamp(36px,5vw,59px);
+  line-height: 1.2;
+  margin: 0 0 27px;
 }
 
-.section-desc {
-  max-width: 690px;
+.section-description {
   color: var(--muted);
   font-size: 16px;
-  margin-bottom: 48px;
+  max-width: 720px;
+  margin-bottom: 42px;
 }
 
 section {
   padding: 105px 0;
 }
 
-.btn {
-  display: inline-block;
-  padding: 14px 26px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: .3px;
-  transition: .3s;
-}
+/* NAVIGATION */
 
-.btn-gold {
-  background: var(--gold);
-  color: #17130e;
-}
-
-.btn-gold:hover {
-  background: var(--gold-light);
-  transform: translateY(-3px);
-}
-
-.btn-outline {
-  border: 1px solid var(--gold);
-  color: var(--gold);
-}
-
-.btn-outline:hover {
-  background: rgba(198,168,120,.12);
-  transform: translateY(-3px);
-}
-
-/* =============================
-   NAVIGATION
-============================= */
-
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+header {
   background: rgba(16,16,16,.94);
   backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255,255,255,.07);
-  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }
 
-.nav {
+.navbar {
+  height: 78px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  height: 80px;
+  align-items: center;
   gap: 25px;
 }
 
-.logo {
-  font-size: 20px;
+.brand {
   font-weight: 700;
+  font-size: 19px;
   letter-spacing: 2px;
   white-space: nowrap;
 }
 
-.logo span {
+.brand span {
   color: var(--gold);
 }
 
-.nav-menu {
+.navlinks {
   display: flex;
-  gap: 27px;
+  gap: 26px;
   align-items: center;
 }
 
-.nav-menu a {
-  color: #ddd8d0;
+.navlinks a {
   font-size: 13px;
-  font-weight: 500;
+  color: #ddd8ce;
   transition: color .2s;
 }
 
-.nav-menu a:hover {
+.navlinks a:hover {
   color: var(--gold);
 }
 
-.menu-btn {
+.menu-toggle {
   display: none;
-  background: none;
   border: 1px solid var(--border);
-  color: var(--white);
-  padding: 8px 12px;
+  background: transparent;
+  color: white;
+  padding: 8px 14px;
   cursor: pointer;
 }
 
-/* =============================
-   HERO
-============================= */
+/* HERO */
 
 .hero {
-  min-height: 830px;
+  min-height: 780px;
   display: flex;
   align-items: center;
-  padding: 150px 0 100px;
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(
-      ellipse at 80% 40%,
-      rgba(173,131,75,.13),
-      transparent 55%
-    );
-}
-
-.hero::before {
-  content: "Z";
-  position: absolute;
-  right: 2%;
-  top: 14%;
-  font-family: Georgia, serif;
-  font-size: clamp(330px, 53vw, 780px);
-  color: rgba(198,168,120,.035);
-  line-height: 1;
-  pointer-events: none;
+  padding: 160px 0 100px;
+  background: radial-gradient(
+    ellipse at 80% 35%,
+    rgba(198,168,120,.13),
+    transparent 55%
+  );
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr .9fr;
-  gap: 70px;
+  gap: 65px;
   align-items: center;
-  position: relative;
-  z-index: 1;
 }
 
-.hero-text h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(65px, 8vw, 112px);
-  font-weight: 500;
-  line-height: 1.06;
+.hero h1 {
+  font-family: "Playfair Display",Georgia,serif;
+  font-size: clamp(65px,8vw,112px);
+  line-height: 1.05;
   letter-spacing: -3px;
-  margin-bottom: 25px;
+  font-weight: 500;
+  margin: 0 0 25px;
 }
 
-.hero-text h1 span {
-  color: var(--gold);
+.hero h1 span {
   display: block;
+  color: var(--gold);
 }
 
-.hero-description {
-  font-size: 18px;
+.hero p {
+  max-width: 550px;
   color: var(--muted);
-  max-width: 530px;
+  font-size: 18px;
   margin-bottom: 30px;
-}
-
-.hero-personal {
-  color: #d2cdc4;
-  font-size: 15px;
-  max-width: 530px;
-  margin-bottom: 35px;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-/* HERO PHOTO */
-
-.hero-photo-wrap {
-  position: relative;
-  padding: 13px;
-  border: 1px solid var(--border);
-  background: rgba(198,168,120,.04);
 }
 
 .hero-photo {
   position: relative;
-  overflow: hidden;
-  height: 590px;
-  background: #25221e;
+  padding: 12px;
+  border: 1px solid var(--border);
+  background: rgba(198,168,120,.05);
 }
 
 .hero-photo img {
   width: 100%;
-  height: 100%;
+  height: 550px;
   object-fit: cover;
-  object-position: center 46%;
-  transition: transform .7s ease;
+  object-position: center 45%;
 }
 
-.hero-photo:hover img {
-  transform: scale(1.04);
-}
-
-.photo-caption {
+.photo-label {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  background: rgba(15,15,15,.82);
-  backdrop-filter: blur(15px);
-  padding: 15px 20px;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  background: rgba(10,10,10,.83);
   border-left: 3px solid var(--gold);
+  padding: 14px 20px;
+  backdrop-filter: blur(12px);
 }
 
-.photo-caption strong {
+.photo-label strong {
   display: block;
-  font-size: 13px;
-  color: var(--white);
-  letter-spacing: .5px;
+  font-size: 14px;
 }
 
-.photo-caption span {
-  font-size: 12px;
+.photo-label small {
   color: var(--gold-light);
 }
 
-/* =============================
-   ABOUT ME
-============================= */
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: #15120f;
+  padding: 14px 25px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .25s;
+}
+
+.btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-3px);
+}
+
+/* MY STORY */
 
 .about {
-  background: var(--bg-soft);
-  border-top: 1px solid rgba(255,255,255,.05);
-  border-bottom: 1px solid rgba(255,255,255,.05);
+  background: var(--soft);
+  border-block: 1px solid var(--border);
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: .85fr 1.15fr;
-  gap: 80px;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 85px;
 }
 
-.about-intro {
-  position: sticky;
-  top: 125px;
+.about-heading {
   align-self: start;
+  position: sticky;
+  top: 120px;
 }
 
-.about-content p {
-  color: var(--muted);
+.about-text p {
   font-size: 16px;
-  margin-bottom: 23px;
+  color: var(--muted);
+  margin: 0 0 24px;
 }
 
-.about-content p:first-child {
+.about-text p:first-child {
+  font-size: 21px;
   color: var(--white);
-  font-size: 19px;
-  line-height: 1.8;
 }
 
-.about-signature {
-  font-family: 'Playfair Display', serif;
-  font-size: 29px;
+.about-text .closing-line {
+  font-family: "Playfair Display",serif;
   color: var(--gold);
+  font-size: 27px;
   font-style: italic;
-  margin-top: 30px;
+  margin-top: 35px;
 }
 
-/* =============================
-   TRAVEL JOURNAL
-============================= */
+/* TRAVEL */
 
-.travel {
-  background: var(--bg);
-}
-
-.travel-feature {
+.travel-grid {
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
+  grid-template-columns: 1fr 1fr;
   border: 1px solid var(--border);
-  background: var(--bg-card);
   overflow: hidden;
-  margin-bottom: 25px;
+  background: var(--card);
 }
 
-.travel-image {
-  min-height: 460px;
-  overflow: hidden;
-}
-
-.travel-image img {
+.travel-photo img {
   width: 100%;
   height: 100%;
+  min-height: 445px;
   object-fit: cover;
-  object-position: center;
-  transition: transform .6s;
 }
 
-.travel-feature:hover .travel-image img {
-  transform: scale(1.04);
-}
-
-.travel-content {
-  padding: 50px;
+.travel-copy {
+  padding: 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.post-category {
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 11px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.travel-content h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(30px,3vw,42px);
-  line-height: 1.25;
+.travel-copy h3 {
+  font-family: "Playfair Display",serif;
+  font-size: clamp(29px,3vw,40px);
   font-weight: 500;
-  margin-bottom: 22px;
+  line-height: 1.3;
+  margin: 0 0 20px;
 }
 
-.travel-content p {
+.travel-copy p {
   color: var(--muted);
-  margin-bottom: 26px;
 }
 
-.travel-location {
+.location {
+  color: var(--gold);
   font-size: 13px;
-  color: var(--gold-light);
-  border-top: 1px solid var(--border);
-  padding-top: 22px;
+  margin-top: 15px;
 }
 
-.travel-bottom {
+.note {
   text-align: center;
-  margin-top: 40px;
   color: var(--muted);
+  margin-top: 32px;
   font-size: 14px;
 }
 
-/* =============================
-   LIFE & WORK
-============================= */
+/* LIFE & WORK */
 
-.life-work {
-  background: var(--bg-soft);
+.life {
+  background: var(--soft);
 }
 
-.journal-grid {
+.story-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 22px;
 }
 
-.journal-card {
-  background: var(--bg-card);
-  border: 1px solid rgba(255,255,255,.07);
-  transition: transform .3s, border-color .3s;
-  overflow: hidden;
+.story-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 34px;
+  transition: .25s;
 }
 
-.journal-card:hover {
-  transform: translateY(-6px);
+.story-card:hover {
+  transform: translateY(-5px);
   border-color: var(--gold);
 }
 
-.journal-visual {
-  height: 180px;
-  display: flex;
-  align-items: flex-end;
-  padding: 26px;
-  background:
-    radial-gradient(
-      circle at 75% 20%,
-      rgba(198,168,120,.3),
-      transparent 55%
-    ),
-    linear-gradient(135deg,#342d23,#171717);
-}
-
-.journal-card:nth-child(2) .journal-visual {
-  background:
-    linear-gradient(140deg,#33302a,#171717);
-}
-
-.journal-card:nth-child(3) .journal-visual {
-  background:
-    linear-gradient(140deg,#292727,#453828);
-}
-
-.journal-visual span {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  color: #eee1cf;
-  line-height: 1.15;
-}
-
-.journal-body {
-  padding: 28px;
-}
-
-.journal-body .post-category {
-  margin-bottom: 14px;
-}
-
-.journal-body h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 23px;
+.story-card h3 {
+  font-family: "Playfair Display",serif;
   font-weight: 500;
-  margin-bottom: 14px;
+  font-size: 25px;
+  margin: 16px 0;
 }
 
-.journal-body p {
-  font-size: 14px;
+.story-card p {
   color: var(--muted);
-  line-height: 1.8;
+  font-size: 14px;
 }
 
-/* =============================
-   THOUGHTS & INTERESTS
-============================= */
+/* INTERESTS */
 
-.interests {
-  background: var(--bg);
-}
-
-.interests-grid {
+.interest-grid {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   gap: 20px;
 }
 
-.interest-box {
+.interest {
+  background: var(--soft);
   border: 1px solid var(--border);
-  background: #181715;
-  padding: 35px;
-  transition: background .3s, transform .3s;
+  padding: 36px;
 }
 
-.interest-box:hover {
-  background: #24211d;
-  transform: translateY(-3px);
-}
-
-.interest-number {
-  font-size: 12px;
-  color: var(--gold);
-  margin-bottom: 20px;
-  display: block;
-}
-
-.interest-box h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
+.interest h3 {
+  font-family: "Playfair Display",serif;
   font-weight: 500;
-  margin-bottom: 13px;
+  font-size: 26px;
+  margin: 10px 0;
 }
 
-.interest-box p {
+.interest p {
   color: var(--muted);
   font-size: 14px;
 }
 
-/* =============================
-   PERSONAL QUOTE
-============================= */
+/* QUOTE */
 
 .quote-section {
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(198,168,120,.12),
-      transparent 65%
-    ),
-    #161513;
-  padding: 110px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
   text-align: center;
+  background: #1b1916;
+  border-block: 1px solid var(--border);
 }
 
-.quote {
+.quote-section blockquote {
+  font-family: "Playfair Display",serif;
+  font-size: clamp(26px,3.5vw,43px);
+  line-height: 1.5;
   max-width: 900px;
   margin: auto;
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(27px,3.7vw,45px);
-  line-height: 1.5;
-  font-weight: 400;
-  color: var(--white);
 }
 
-.quote span {
-  color: var(--gold);
-}
+/* SIGN OFF */
 
-/* =============================
-   CLOSING SECTION
-============================= */
-
-.closing {
+.signoff {
   text-align: center;
-  padding: 105px 0;
 }
 
-.closing h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(35px,5vw,57px);
-  font-weight: 500;
-  margin-bottom: 25px;
-}
-
-.closing p {
+.signoff p {
   color: var(--muted);
   max-width: 650px;
   margin: auto;
-  font-size: 16px;
 }
 
-/* =============================
-   FOOTER
-============================= */
+/* VISITOR STATISTICS */
+
+.visitor-section {
+  background: #141311;
+  border-top: 1px solid var(--border);
+  padding: 50px 0;
+}
+
+.visitor-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.visitor-title {
+  font-family: "Playfair Display",serif;
+  font-size: 27px;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+
+.visitor-subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.counter {
+  font-size: clamp(28px,4vw,46px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.counter-label {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: right;
+}
+
+.visitor-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 35px 0;
+}
+
+.country-title {
+  font-size: 15px;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.countries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.country {
+  display: inline-flex;
+  align-items: center;
+  background: #211f1c;
+  color: #d9d1c4;
+  border: 1px solid rgba(198,168,120,.15);
+  font-size: 12px;
+  padding: 7px 12px;
+  border-radius: 30px;
+}
+
+.stats-disclaimer {
+  font-size: 11px;
+  color: #aaa49a;
+  margin-top: 18px;
+  max-width: 850px;
+}
+
+/* FOOTER */
 
 footer {
   background: #0b0b0b;
   border-top: 1px solid var(--border);
-  padding: 35px 0;
+  padding: 30px 0;
 }
 
-.footer-content {
+.footer-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap;
 }
 
-.footer-content p {
-  color: #99948a;
-  font-size: 13px;
+footer p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0;
 }
 
-.footer-content a {
+footer a {
   color: var(--gold);
-  font-size: 13px;
+  font-size: 12px;
 }
 
-/* =============================
-   ANIMATIONS
-============================= */
+/* ANIMATIONS */
 
 .reveal {
   opacity: 0;
-  transform: translateY(25px);
-  transition: opacity .7s ease, transform .7s ease;
+  transform: translateY(22px);
+  transition: opacity .7s, transform .7s;
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
-/* =============================
-   RESPONSIVE TABLET
-============================= */
+/* TABLET */
 
 @media(max-width:950px) {
-
   .hero-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
+    gap: 30px;
   }
 
-  .hero-text h1 {
-    font-size: 70px;
-  }
-
-  .hero-photo {
-    height: 510px;
+  .hero-photo img {
+    height: 490px;
   }
 
   .about-grid {
-    gap: 45px;
+    gap: 40px;
   }
 
-  .journal-grid {
-    grid-template-columns: repeat(2,1fr);
+  .navlinks {
+    gap: 14px;
   }
-
-  .nav-menu {
-    gap: 15px;
-  }
-
 }
 
-/* =============================
-   RESPONSIVE MOBILE
-============================= */
+/* MOBILE */
 
 @media(max-width:700px) {
+  section {
+    padding: 75px 0;
+  }
 
-  .nav {
+  .navbar {
     height: 70px;
   }
 
-  .logo {
-    font-size: 16px;
+  .brand {
+    font-size: 15px;
   }
 
-  .menu-btn {
+  .menu-toggle {
     display: block;
   }
 
-  .nav-menu {
+  .navlinks {
     display: none;
     position: absolute;
     top: 70px;
     left: 0;
     width: 100%;
-    padding: 25px;
-    background: #171717;
-    border-bottom: 1px solid var(--border);
+    background: #181817;
     flex-direction: column;
     align-items: flex-start;
-    gap: 22px;
+    padding: 25px;
+    gap: 20px;
   }
 
-  .nav-menu.open {
+  .navlinks.open {
     display: flex;
   }
 
-  section {
-    padding: 75px 0;
-  }
-
   .hero {
-    padding: 125px 0 80px;
     min-height: auto;
+    padding: 125px 0 70px;
   }
 
-  .hero-grid {
+  .hero-grid,
+  .about-grid,
+  .travel-grid,
+  .interest-grid {
     grid-template-columns: 1fr;
-    gap: 45px;
   }
 
-  .hero-text h1 {
-    font-size: clamp(60px,14vw,85px);
+  .hero h1 {
+    font-size: 72px;
   }
 
-  .hero-description {
-    font-size: 16px;
+  .hero-photo img {
+    height: 480px;
   }
 
-  .hero-photo {
-    height: 520px;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .about-intro {
+  .about-heading {
     position: static;
   }
 
-  .travel-feature {
+  .story-grid {
     grid-template-columns: 1fr;
   }
 
-  .travel-image {
-    min-height: 390px;
-    height: 390px;
+  .travel-photo img {
+    min-height: 340px;
+    max-height: 440px;
   }
 
-  .travel-content {
+  .travel-copy {
     padding: 30px;
   }
 
-  .journal-grid {
-    grid-template-columns: 1fr;
+  .visitor-top {
+    align-items: flex-start;
   }
 
-  .interests-grid {
-    grid-template-columns: 1fr;
+  .counter-label {
+    text-align: left;
   }
 
-  .interest-box {
-    padding: 28px;
-  }
-
-  .quote-section {
-    padding: 85px 0;
-  }
-
-  .footer-content {
+  .footer-inner {
     flex-direction: column;
     text-align: center;
   }
-
 }
 
 @media(prefers-reduced-motion:reduce) {
@@ -813,13 +663,6 @@ footer {
     transform: none;
     transition: none;
   }
-
-  .hero-photo img,
-  .travel-image img,
-  .journal-card,
-  .interest-box {
-    transition: none;
-  }
 }
 
 </style>
@@ -827,57 +670,42 @@ footer {
 
 <body>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+<!-- NAVIGATION -->
 
-<header class="header">
+<header>
+  <nav class="container navbar" aria-label="Main navigation">
 
-  <nav class="container nav"
-       aria-label="Main navigation">
-
-    <a href="#home" class="logo">
+    <a class="brand" href="#home">
       ZACH<span>.</span>DE SOUZA
     </a>
 
-    <button class="menu-btn"
-            id="menuBtn"
-            aria-controls="navMenu"
-            aria-expanded="false">
+    <button class="menu-toggle"
+      id="menuToggle"
+      aria-expanded="false"
+      aria-controls="navlinks">
       ☰ Menu
     </button>
 
-    <div class="nav-menu" id="navMenu">
-
+    <div class="navlinks" id="navlinks">
       <a href="#home">Home</a>
-
       <a href="#about">My Story</a>
-
       <a href="#travel">Travel Journal</a>
-
       <a href="#life">Life & Work</a>
-
       <a href="#interests">My Interests</a>
-
     </div>
 
   </nav>
-
 </header>
 
 <main>
 
-<!-- =========================
-     HOME / HERO
-========================= -->
+<!-- HOMEPAGE -->
 
 <section class="hero" id="home">
-
   <div class="container hero-grid">
 
-    <div class="hero-text">
-
-      <span class="small-title">
+    <div>
+      <span class="eyebrow">
         Welcome to my little corner of the internet
       </span>
 
@@ -886,614 +714,438 @@ footer {
         <span>Zach.</span>
       </h1>
 
-      <p class="hero-description">
+      <p>
         Malaysian by birth, curious by nature.
         A little about my roots, the places I go,
         the things that interest me and whatever
         I'm exploring next.
       </p>
 
-      <p class="hero-personal">
-        I'm not here to sell anything.
-        This is simply a space to share stories,
-        photographs, experiences and bits of life
-        that I think are worth remembering.
+      <p>
+        This is my own little space to share
+        stories, photographs, experiences
+        and bits of life along the way.
       </p>
 
-      <div class="hero-buttons">
-
-        <a href="#about"
-           class="btn btn-gold">
-          Get to Know Me ↗
-        </a>
-
-        <a href="#travel"
-           class="btn btn-outline">
-          My Travel Journal ↓
-        </a>
-
-      </div>
-
+      <a class="btn" href="#about">
+        Get to Know Me ↗
+      </a>
     </div>
 
-    <!-- MAIN PHOTO -->
+    <div class="hero-photo">
+      <img
+        src="monaco.jpg"
+        alt="Zach in Monaco"
+        fetchpriority="high"
+      >
 
-    <div class="hero-photo-wrap">
-
-      <div class="hero-photo">
-
-        <!--
-          IMPORTANT:
-          Upload monaco.jpg to the same
-          GitHub folder as index.html
-        -->
-
-        <img
-          src="monaco.jpg"
-          alt="Zach enjoying a relaxing moment in Monaco"
-          fetchpriority="high"
-          onerror="this.style.display='none'"
-        >
-
-        <div class="photo-caption">
-
-          <strong>
-            A moment in Monaco
-          </strong>
-
-          <span>
-            Places, people and memories.
-          </span>
-
-        </div>
-
+      <div class="photo-label">
+        <strong>A Moment in Monaco</strong>
+        <small>Places, people and memories.</small>
       </div>
-
     </div>
 
   </div>
-
 </section>
 
-<!-- =========================
-     ABOUT ME
-========================= -->
+<!-- MY STORY -->
 
 <section class="about" id="about">
-
   <div class="container about-grid">
 
-    <div class="about-intro reveal">
+    <div class="about-heading reveal">
+      <span class="eyebrow">01 / My Story</span>
 
-      <span class="small-title">
-        01 / My Story
-      </span>
-
-      <h2 class="section-title">
-        A little about
-        <span class="gold">my story.</span>
+      <h2 class="section-heading">
+        A Little About
+        <span class="gold">My Story.</span>
       </h2>
-
-      <p style="color:var(--muted);">
-        A little about where I come from,
-        what I enjoy and the things
-        that make me who I am.
-      </p>
-
     </div>
 
-    <div class="about-content reveal">
+    <div class="about-text reveal">
+
+      <p>Hi, I'm Zach.</p>
 
       <p>
-        Hi, I'm Zach.
+        I was born and raised in Malaysia, and my family
+        roots go back more than 500 years to Malacca.
+        I come from a mixed family. My mum is Portuguese
+        and my dad is Malay, so I'm Malay-Portuguese,
+        with roots in the Kristang community, or
+        Orang Serani as we're commonly known here.
       </p>
 
       <p>
-        I was born and raised in Malaysia,
-        with family roots that trace back more
-        than 500 years to Malacca. I'm of Malay
-        and Portuguese descent, with ties to
-        the Kristang community, also known
-        locally as Orang Serani.
+        I've always been proud of where I come from.
+        Growing up with two different cultural
+        backgrounds has given me a bit of both worlds,
+        and I think that's partly why I've always been
+        interested in different people, cultures
+        and ways of life.
       </p>
 
       <p>
-        It's a heritage I'm proud of, and
-        growing up surrounded by different
-        cultures has shaped the way I see
-        people and the world around me.
+        Travelling is something I've always enjoyed.
+        Of course, I love visiting beautiful places,
+        but sometimes it's the little things that
+        make a trip memorable. Walking around a local
+        market, trying food I've never heard of,
+        chatting with someone I've just met or simply
+        sitting somewhere and watching the world go by.
+        Those are usually the moments I remember most.
       </p>
 
       <p>
-        I've always loved travelling, but
-        it's not necessarily the famous
-        landmarks that make a trip memorable.
-        Sometimes, it's a conversation with
-        a local, a walk through a small market
-        or discovering a place that's not on
-        the usual tourist trail.
+        I guess travelling has also made me more
+        curious about the world. Every country has
+        its own character, traditions and stories.
+        I enjoy discovering those differences and
+        experiencing places for myself rather than
+        just reading about them or seeing them
+        on social media.
       </p>
 
       <p>
-        Those little experiences often tell
-        you more about a place than any
-        guidebook could.
+        When I'm not working or travelling, I'm
+        usually finding something new to keep
+        myself occupied. I'm the type of person
+        who gets curious about something and ends
+        up spending hours trying to figure it out.
+        Sometimes it's a new skill, sometimes
+        a creative idea, and sometimes it's
+        just something random that caught
+        my attention.
       </p>
 
       <p>
-        Travelling has also taught me to stay
-        curious. Every place has its own
-        stories, traditions and way of life.
-        There's always something new to discover,
-        especially when you take the time to
-        look beyond the obvious.
+        I'm also really into technology, especially
+        new developments in artificial intelligence.
+        I've always been fascinated by how quickly
+        technology evolves and what we can actually
+        do with it. AI, websites, digital tools,
+        new apps, you name it. If something interesting
+        comes along, chances are I'll want to try it.
+        I enjoy experimenting, figuring things out
+        and occasionally building something just
+        to see whether I can make it work.
+        I'm definitely not an expert in everything,
+        but that's part of the fun. There's
+        always something new to learn.
       </p>
 
       <p>
-        Outside of work, I'm the kind of person
-        who gets drawn into new ideas. If
-        something catches my interest, I can
-        easily spend hours reading about it,
-        experimenting or figuring out how it works.
+        As for work, I've spent over 20 years
+        in communications, public relations,
+        marketing, branding and digital media.
+        I've been involved in all sorts of
+        things over the years, from campaigns
+        and events to working with different
+        people and organisations. It's been
+        quite a journey, with plenty of
+        experiences, challenges and lessons
+        along the way. And even after all
+        these years, there's still something
+        new to learn.
+      </p>
+
+      <p>So, why this website?</p>
+
+      <p>
+        Well, I've always liked the idea of
+        having my own little space on the internet.
+        Somewhere I can share my travels,
+        photographs, work experiences,
+        random thoughts and whatever else
+        I'm interested in at the time.
+        Nothing too formal, and definitely
+        not another corporate website.
       </p>
 
       <p>
-        I enjoy learning new skills, trying
-        things I've never done before and
-        occasionally getting carried away
-        with a project just because I find
-        it interesting.
+        I don't really have a particular theme
+        or plan for everything I'll share here.
+        Some days it might be about a place
+        I've visited, other days something
+        I've been working on, or maybe just
+        a random thought that I feel like
+        putting into words.
       </p>
 
       <p>
-        Technology is another big interest
-        of mine. I'm fascinated by how it
-        continues to change the way we
-        communicate, work and learn.
+        It's basically a little bit of
+        everything that makes me, well, me.
       </p>
 
       <p>
-        That curiosity has led me to explore
-        digital platforms, website development,
-        creative tools and, more recently,
-        artificial intelligence.
+        Anyway, that's a little about myself.
       </p>
 
-      <p>
-        On the professional side, I've spent
-        over 20 years working across communications,
-        public relations, marketing, branding,
-        digital media and stakeholder engagement.
-      </p>
-
-      <p>
-        I've been involved in everything from
-        corporate campaigns and events to
-        developing communication strategies
-        and digital projects.
-      </p>
-
-      <p>
-        Through it all, I've learned that good
-        communication isn't just about what
-        you say, but how well you connect
-        with people.
-      </p>
-
-      <p>
-        This website is a little collection
-        of who I am, what I do and what
-        interests me.
-      </p>
-
-      <p>
-        You'll find bits of my professional
-        journey, travels, creative projects
-        and whatever else happens to catch
-        my attention along the way.
-      </p>
-
-      <p>
-        Nothing too complicated. Just a place
-        to share my experiences, ideas and
-        a few stories of my own.
-      </p>
-
-      <div class="about-signature">
+      <p class="closing-line">
         Thanks for stopping by.
-      </div>
+      </p>
 
     </div>
 
   </div>
-
 </section>
 
-<!-- =========================
-     TRAVEL JOURNAL
-========================= -->
+<!-- TRAVEL JOURNAL -->
 
-<section class="travel" id="travel">
-
+<section id="travel">
   <div class="container">
 
-    <div class="reveal">
+    <span class="eyebrow">
+      02 / My Travel Journal
+    </span>
 
-      <span class="small-title">
-        02 / My Travel Journal
+    <h2 class="section-heading">
+      Places I've Been.
+      <span class="gold">
+        Stories I've Collected.
       </span>
+    </h2>
 
-      <h2 class="section-title">
-        Places I've been.
-        <span class="gold">
-          Stories I've collected.
-        </span>
-      </h2>
+    <p class="section-description">
+      Some places leave you with photographs.
+      Others leave you with stories.
+      Here's a little of both, from familiar
+      streets in Malaysia to places further away.
+    </p>
 
-      <p class="section-desc">
-        Some places leave you with photographs.
-        Others leave you with stories.
-        Here's a little of both, from familiar
-        streets in Malaysia to places further away.
-      </p>
+    <article class="travel-grid reveal">
 
-    </div>
-
-    <!-- FIRST TRAVEL FEATURE -->
-
-    <article class="travel-feature reveal">
-
-      <div class="travel-image">
-
+      <div class="travel-photo">
         <img
           src="monaco.jpg"
-          alt="Zach relaxing in Monaco, with a marina and sailing boats in the background"
+          alt="A travel memory from Monaco"
           loading="lazy"
         >
-
       </div>
 
-      <div class="travel-content">
+      <div class="travel-copy">
+        <span class="eyebrow">
+          Travel Moments
+        </span>
 
-        <div class="post-category">
-          Travel Moments / Monaco
-        </div>
-
-        <h3>
-          A Little Moment
-          in Monaco.
-        </h3>
+        <h3>A Little Moment in Monaco.</h3>
 
         <p>
-          Not every travel memory needs
-          to be about a famous attraction.
-          Sometimes, it's simply finding
-          a comfortable spot, taking in
-          the surroundings and enjoying
-          where you are.
+          Not every travel memory needs to
+          be about visiting a famous attraction.
+          Sometimes it's about finding a
+          comfortable spot, taking in the
+          surroundings and enjoying where you are.
         </p>
 
         <p>
           This is one of those moments
           from my time in Monaco.
-          A photograph, a place and
-          another memory for the collection.
+          Another photograph, another place
+          and another memory for the collection.
         </p>
 
-        <div class="travel-location">
+        <div class="location">
           📍 Monaco
         </div>
-
       </div>
 
     </article>
 
-    <p class="travel-bottom">
-      More places, photographs and travel
-      stories will find their way here.
+    <p class="note">
+      More photographs, destinations and
+      travel stories will find their way here.
     </p>
 
   </div>
-
 </section>
 
-<!-- =========================
-     LIFE & WORK
-========================= -->
+<!-- LIFE & WORK -->
 
-<section class="life-work" id="life">
-
+<section class="life" id="life">
   <div class="container">
 
-    <div class="reveal">
+    <span class="eyebrow">
+      03 / Life & Work
+    </span>
 
-      <span class="small-title">
-        03 / Life & Work
-      </span>
+    <h2 class="section-heading">
+      A Little of What
+      <span class="gold">I've Been Up To.</span>
+    </h2>
 
-      <h2 class="section-title">
-        A little of what
-        <span class="gold">
-          I've been up to.
+    <p class="section-description">
+      A few things from my working life,
+      creative projects and everyday experiences.
+      Some big, some small, all part of the journey.
+    </p>
+
+    <div class="story-grid">
+
+      <article class="story-card reveal">
+        <span class="eyebrow">
+          Work & Experiences
         </span>
-      </h2>
 
-      <p class="section-desc">
-        Life isn't only about the places
-        we visit. It's also about the
-        people we meet, the work we do
-        and the experiences we pick up
-        along the way.
-      </p>
+        <h3>Life Behind the Desk.</h3>
 
-    </div>
-
-    <div class="journal-grid">
-
-      <!-- WORK EXPERIENCES -->
-
-      <article class="journal-card reveal">
-
-        <div class="journal-visual">
-          <span>
-            Along the<br>
-            Way.
-          </span>
-        </div>
-
-        <div class="journal-body">
-
-          <div class="post-category">
-            Work & Experiences
-          </div>
-
-          <h3>
-            Life Behind the Desk.
-          </h3>
-
-          <p>
-            A glimpse into my working life.
-            The projects, experiences,
-            people and occasional lessons
-            that have become part of
-            my professional journey.
-          </p>
-
-        </div>
-
+        <p>
+          A little glimpse into my working
+          life, the people I've met,
+          interesting projects and lessons
+          picked up along the way.
+        </p>
       </article>
 
-      <!-- CREATIVE PROJECTS -->
+      <article class="story-card reveal">
+        <span class="eyebrow">
+          Creative Projects
+        </span>
 
-      <article class="journal-card reveal">
+        <h3>Things I Like to Create.</h3>
 
-        <div class="journal-visual">
-          <span>
-            Trying<br>
-            Something New.
-          </span>
-        </div>
-
-        <div class="journal-body">
-
-          <div class="post-category">
-            Creative Projects
-          </div>
-
-          <h3>
-            Things I Like to Create.
-          </h3>
-
-          <p>
-            Websites, digital ideas,
-            design experiments and
-            whatever project has caught
-            my attention lately.
-            Sometimes I just enjoy
-            figuring things out.
-          </p>
-
-        </div>
-
+        <p>
+          Websites, new ideas, technology
+          experiments and projects that
+          keep my curiosity going.
+        </p>
       </article>
 
-      <!-- EVERYDAY LIFE -->
+      <article class="story-card reveal">
+        <span class="eyebrow">
+          Everyday Life
+        </span>
 
-      <article class="journal-card reveal">
+        <h3>The Little Moments.</h3>
 
-        <div class="journal-visual">
-          <span>
-            Little<br>
-            Moments.
-          </span>
-        </div>
-
-        <div class="journal-body">
-
-          <div class="post-category">
-            Everyday Life
-          </div>
-
-          <h3>
-            The In-Between Moments.
-          </h3>
-
-          <p>
-            Not everything needs to be
-            a big occasion. Sometimes
-            the ordinary things, small
-            discoveries and unexpected
-            moments are worth sharing too.
-          </p>
-
-        </div>
-
+        <p>
+          Sometimes it's the ordinary
+          things, unexpected discoveries
+          and simple moments that end
+          up becoming the best memories.
+        </p>
       </article>
 
     </div>
 
   </div>
-
 </section>
 
-<!-- =========================
-     THOUGHTS & INTERESTS
-========================= -->
+<!-- MY INTERESTS -->
 
-<section class="interests" id="interests">
-
+<section id="interests">
   <div class="container">
 
-    <div class="reveal">
+    <span class="eyebrow">
+      04 / Things That Interest Me
+    </span>
 
-      <span class="small-title">
-        04 / Things That Interest Me
-      </span>
+    <h2 class="section-heading">
+      Random Thoughts
+      <span class="gold">& Other Things.</span>
+    </h2>
 
-      <h2 class="section-title">
-        Random thoughts
-        <span class="gold">
-          & other things.
-        </span>
-      </h2>
+    <p class="section-description">
+      I've never been someone who sticks
+      to just one interest. There's always
+      something new to explore.
+    </p>
 
-      <p class="section-desc">
-        I've never been someone who sticks
-        to just one interest. There are
-        always new things to discover,
-        learn or try.
-      </p>
+    <div class="interest-grid">
 
-    </div>
+      <div class="interest reveal">
+        <span class="eyebrow">01 / Travel</span>
 
-    <div class="interests-grid">
-
-      <div class="interest-box reveal">
-
-        <span class="interest-number">
-          01 / TRAVEL
-        </span>
-
-        <h3>
-          Getting Lost Somewhere New.
-        </h3>
+        <h3>Somewhere New.</h3>
 
         <p>
           New cities, different cultures,
-          interesting food, unexpected
-          conversations and the occasional
-          wrong turn that turns into a
-          good story.
+          local food, unexpected conversations
+          and the occasional wrong turn
+          that becomes a good story.
         </p>
-
       </div>
 
-      <div class="interest-box reveal">
+      <div class="interest reveal">
+        <span class="eyebrow">02 / Technology</span>
 
-        <span class="interest-number">
-          02 / TECHNOLOGY
-        </span>
-
-        <h3>
-          Exploring What's Next.
-        </h3>
+        <h3>Exploring What's Next.</h3>
 
         <p>
-          From websites and digital tools
-          to artificial intelligence,
-          I enjoy seeing what technology
-          can do and finding ways to
-          experiment with it myself.
+          Artificial intelligence,
+          emerging technologies,
+          new applications and
+          digital experiments.
+          If it's new and interesting,
+          I'll probably want to try it.
         </p>
-
       </div>
 
-      <div class="interest-box reveal">
-
-        <span class="interest-number">
-          03 / CULTURE & HERITAGE
+      <div class="interest reveal">
+        <span class="eyebrow">
+          03 / Culture & Heritage
         </span>
 
-        <h3>
-          Remembering Where I Come From.
-        </h3>
+        <h3>My Roots.</h3>
 
         <p>
-          My Malaysian, Malay and Portuguese
-          roots are part of my identity.
-          I enjoy learning about history,
-          traditions and the stories
-          that connect generations.
+          My Malay-Portuguese background,
+          Kristang heritage, history
+          and the stories that connect
+          us to earlier generations.
         </p>
-
       </div>
 
-      <div class="interest-box reveal">
+      <div class="interest reveal">
+        <span class="eyebrow">04 / Creativity</span>
 
-        <span class="interest-number">
-          04 / CREATIVITY
-        </span>
-
-        <h3>
-          Making Things Just Because.
-        </h3>
+        <h3>Just Trying Things Out.</h3>
 
         <p>
-          Sometimes I have an idea
-          and simply want to see if
-          I can make it happen.
-          There's something satisfying
-          about learning as you go.
+          Sometimes an idea pops into
+          my head and I just want
+          to see if I can make it work.
+          That's usually how my
+          little projects begin.
         </p>
-
       </div>
 
     </div>
 
   </div>
-
 </section>
 
-<!-- =========================
-     PERSONAL QUOTE
-========================= -->
+<!-- PERSONAL QUOTE -->
 
 <section class="quote-section">
-
   <div class="container reveal">
 
-    <span class="small-title">
-      A thought I keep coming back to
+    <span class="eyebrow">
+      A Thought I Keep Coming Back To
     </span>
 
-    <p class="quote">
+    <blockquote>
       Life isn't just about where you go
-      or what you do. Sometimes it's the
-      <span>little moments in between</span>
+      or what you do. Sometimes it's
+      the <span class="gold">
+      little moments in between</span>
       that make the best stories.
-    </p>
+    </blockquote>
 
   </div>
-
 </section>
 
-<!-- =========================
-     CLOSING
-========================= -->
+<!-- THANK YOU -->
 
-<section class="closing">
-
+<section class="signoff">
   <div class="container reveal">
 
-    <span class="small-title">
+    <span class="eyebrow">
       Until Next Time
     </span>
 
-    <h2>
+    <h2 class="section-heading">
       Thanks for
-      <span class="gold">
-        stopping by.
-      </span>
+      <span class="gold">Stopping By.</span>
     </h2>
 
     <p>
@@ -1506,18 +1158,72 @@ footer {
     </p>
 
   </div>
+</section>
 
+<!-- VISITOR STATISTICS -->
+
+<section class="visitor-section" id="visitors">
+  <div class="container">
+
+    <div class="visitor-top">
+
+      <div>
+        <h2 class="visitor-title">
+          Visitors Around the World
+        </h2>
+
+        <p class="visitor-subtitle">
+          A little window into this corner
+          of the internet.
+        </p>
+      </div>
+
+      <div aria-live="polite">
+        <div class="counter" id="viewCount">
+          576,321
+        </div>
+
+        <span class="counter-label">
+          Displayed Page Views
+        </span>
+      </div>
+
+    </div>
+
+    <div class="visitor-divider"></div>
+
+    <h3 class="country-title">
+      🌍 Around the World
+    </h3>
+
+    <!--
+      Sample country list, not verified
+      visitor geolocation data.
+      Replace with real analytics results
+      once tracking is configured.
+    -->
+
+    <div class="countries" id="countryList">
+    </div>
+
+    <p class="stats-disclaimer">
+      The counter uses a chosen starting display
+      value of 576,321, not verified historical
+      page views. New page loads may be added
+      through a free third-party counter.
+      Countries are illustrative examples,
+      not confirmed visitor locations.
+    </p>
+
+  </div>
 </section>
 
 </main>
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
-
-  <div class="container footer-content">
+  <div class="container footer-inner">
 
     <p>
       © <span id="year"></span>
@@ -1526,6 +1232,7 @@ footer {
     </p>
 
     <p>
+      Made with curiosity.
       A little corner of my world.
     </p>
 
@@ -1534,68 +1241,58 @@ footer {
     </a>
 
   </div>
-
 </footer>
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
 
 <script>
 
-// COPYRIGHT YEAR
+/* COPYRIGHT YEAR */
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
 
-// MOBILE MENU
+/* MOBILE MENU */
 
-const menuBtn =
-  document.getElementById("menuBtn");
+const menuToggle =
+  document.getElementById("menuToggle");
 
-const navMenu =
-  document.getElementById("navMenu");
+const navlinks =
+  document.getElementById("navlinks");
 
-menuBtn.addEventListener("click", function() {
+menuToggle.addEventListener("click", function() {
 
-  const isOpen =
-    navMenu.classList.toggle("open");
+  const open =
+    navlinks.classList.toggle("open");
 
-  menuBtn.setAttribute(
+  menuToggle.setAttribute(
     "aria-expanded",
-    String(isOpen)
+    String(open)
   );
 
-  menuBtn.textContent =
-    isOpen ? "✕ Close" : "☰ Menu";
+  menuToggle.textContent =
+    open ? "✕ Close" : "☰ Menu";
 
 });
 
-
-// CLOSE MENU AFTER CLICKING LINKS
-
-document.querySelectorAll(
-  ".nav-menu a"
-).forEach(function(link) {
+navlinks.querySelectorAll("a").forEach(function(link) {
 
   link.addEventListener("click", function() {
 
-    navMenu.classList.remove("open");
+    navlinks.classList.remove("open");
 
-    menuBtn.setAttribute(
+    menuToggle.setAttribute(
       "aria-expanded",
       "false"
     );
 
-    menuBtn.textContent = "☰ Menu";
+    menuToggle.textContent = "☰ Menu";
 
   });
 
 });
 
 
-// SCROLL ANIMATION
+/* SCROLL REVEAL */
 
 const revealElements =
   document.querySelectorAll(".reveal");
@@ -1613,34 +1310,155 @@ if (
       entries.forEach(function(entry) {
 
         if (entry.isIntersecting) {
-
           entry.target.classList.add(
             "visible"
           );
 
           observer.unobserve(entry.target);
-
         }
 
       });
 
     },
-    {
-      threshold: 0.08
-    }
+    { threshold: .08 }
   );
 
-  revealElements.forEach(function(element) {
-    observer.observe(element);
+  revealElements.forEach(function(el) {
+    observer.observe(el);
   });
 
 } else {
 
-  revealElements.forEach(function(element) {
-    element.classList.add("visible");
+  revealElements.forEach(function(el) {
+    el.classList.add("visible");
   });
 
 }
+
+
+/* COUNTRY LIST
+   These are examples, not tracked locations.
+*/
+
+const countries = [
+  "🇲🇾 Malaysia",
+  "🇵🇰 Pakistan",
+  "🇳🇿 New Zealand",
+  "🇸🇬 Singapore",
+  "🇮🇩 Indonesia",
+  "🇹🇭 Thailand",
+  "🇵🇭 Philippines",
+  "🇧🇳 Brunei",
+  "🇻🇳 Vietnam",
+  "🇨🇳 China",
+  "🇯🇵 Japan",
+  "🇰🇷 South Korea",
+  "🇮🇳 India",
+  "🇧🇩 Bangladesh",
+  "🇱🇰 Sri Lanka",
+  "🇦🇪 United Arab Emirates",
+  "🇸🇦 Saudi Arabia",
+  "🇶🇦 Qatar",
+  "🇴🇲 Oman",
+  "🇹🇷 Türkiye",
+  "🇬🇧 United Kingdom",
+  "🇫🇷 France",
+  "🇩🇪 Germany",
+  "🇮🇹 Italy",
+  "🇪🇸 Spain",
+  "🇵🇹 Portugal",
+  "🇳🇱 Netherlands",
+  "🇨🇭 Switzerland",
+  "🇸🇪 Sweden",
+  "🇳🇴 Norway",
+  "🇦🇺 Australia",
+  "🇺🇸 United States",
+  "🇨🇦 Canada",
+  "🇧🇷 Brazil",
+  "🇿🇦 South Africa",
+  "🇪🇬 Egypt",
+  "🇰🇪 Kenya",
+  "🇲🇺 Mauritius"
+];
+
+const countryList =
+  document.getElementById("countryList");
+
+countries.forEach(function(country) {
+
+  const span = document.createElement("span");
+  span.className = "country";
+  span.textContent = country;
+
+  countryList.appendChild(span);
+
+});
+
+
+/* PAGE VIEW COUNTER
+
+   Baseline is a user-selected display number.
+   It is not verified historical page views.
+
+   Each successful request to the counting
+   service adds one page load.
+
+   This is not a unique visitor tracker.
+*/
+
+const DISPLAY_BASELINE = 576320;
+
+const COUNTER_KEY =
+  "zachdesouza_github_io_personal_20261118_a91b";
+
+const counterElement =
+  document.getElementById("viewCount");
+
+const formatNumber = number =>
+  new Intl.NumberFormat("en-US").format(number);
+
+async function updateCounter() {
+
+  try {
+
+    const response = await fetch(
+      "https://countapi.mileshilliard.com/api/v1/hit/" +
+      COUNTER_KEY,
+      {
+        cache: "no-store"
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Counter unavailable");
+    }
+
+    const data = await response.json();
+
+    const newViews = Number(data.value);
+
+    if (!Number.isFinite(newViews)) {
+      throw new Error("Invalid counter value");
+    }
+
+    counterElement.textContent =
+      formatNumber(
+        DISPLAY_BASELINE + newViews
+      );
+
+  } catch (error) {
+
+    // Retain the starting display figure
+    // when the service cannot be reached.
+
+    counterElement.textContent =
+      formatNumber(576321);
+
+  }
+
+}
+
+updateCounter();
 
 </script>
 
