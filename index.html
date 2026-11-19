@@ -8,7 +8,6 @@
 <title>Zach De Souza | My Little Corner of the World</title>
 
 <meta name="description" content="Welcome to Zach De Souza's personal website. Stories about my Malay-Portuguese heritage, travels, life, work, technology and everything in between.">
-
 <meta name="theme-color" content="#101010">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +17,7 @@
 <style>
 
 /* ====================================
-   COLOURS & GLOBAL STYLES
+   GLOBAL DESIGN
 ==================================== */
 
 :root {
@@ -59,13 +58,8 @@ button {
   font: inherit;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
 .container {
-  width: min(90%,1180px);
+  width: min(90%, 1180px);
   margin: auto;
 }
 
@@ -162,46 +156,69 @@ header {
 
 /* ====================================
    HOMEPAGE HERO
+   NO PERSONAL PHOTO
 ==================================== */
 
 .hero {
-  min-height: 780px;
+  min-height: 690px;
   display: flex;
   align-items: center;
-  padding: 160px 0 100px;
-  background: radial-gradient(
-    ellipse at 80% 35%,
-    rgba(198,168,120,.13),
-    transparent 55%
-  );
+  padding: 155px 0 110px;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 75% 35%,
+      rgba(198,168,120,.13),
+      transparent 55%
+    ),
+    #101010;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr .9fr;
-  gap: 65px;
-  align-items: center;
+.hero::before {
+  content: "Z";
+  position: absolute;
+  right: 3%;
+  top: 10%;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(350px,55vw,750px);
+  line-height: 1;
+  color: rgba(198,168,120,.045);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
 }
 
 .hero h1 {
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(65px,8vw,112px);
-  line-height: 1.05;
+  font-size: clamp(75px,10vw,125px);
+  line-height: 1.08;
   letter-spacing: -3px;
   font-weight: 500;
-  margin: 0 0 25px;
+  margin: 0 0 30px;
 }
 
 .hero h1 span {
-  display: block;
   color: var(--gold);
 }
 
 .hero p {
-  max-width: 550px;
+  max-width: 700px;
   color: var(--muted);
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 35px;
 }
 
 .btn {
@@ -219,44 +236,18 @@ header {
   transform: translateY(-3px);
 }
 
-/* MAIN PHOTO */
-
-.hero-photo {
-  position: relative;
-  padding: 12px;
-  border: 1px solid var(--border);
-  background: rgba(198,168,120,.05);
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
 }
 
-.hero-photo img {
-  width: 100%;
-  height: 550px;
-  object-fit: cover;
-  object-position: center 45%;
-}
-
-.photo-label {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-  right: 30px;
-  background: rgba(10,10,10,.83);
-  border-left: 3px solid var(--gold);
-  padding: 14px 20px;
-  backdrop-filter: blur(12px);
-}
-
-.photo-label strong {
-  display: block;
-  font-size: 14px;
-}
-
-.photo-label small {
-  color: var(--gold-light);
+.btn-outline:hover {
+  background: rgba(198,168,120,.1);
 }
 
 /* ====================================
-   MY STORY
+   ABOUT ME
 ==================================== */
 
 .about {
@@ -297,53 +288,71 @@ header {
 
 /* ====================================
    TRAVEL JOURNAL
+   NO MONACO STORY OR PHOTO
 ==================================== */
 
-.travel-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.travel {
+  background: var(--bg);
+}
+
+.travel-intro {
+  max-width: 850px;
+}
+
+.travel-placeholder {
   border: 1px solid var(--border);
+  background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(198,168,120,.11),
+      transparent 55%
+    ),
+    var(--card);
+
+  padding: 65px;
+  margin-top: 35px;
+  position: relative;
   overflow: hidden;
-  background: var(--card);
 }
 
-.travel-photo img {
-  width: 100%;
-  height: 100%;
-  min-height: 445px;
-  object-fit: cover;
+.travel-placeholder::after {
+  content: "✈";
+  position: absolute;
+  right: 35px;
+  bottom: -85px;
+  font-size: 250px;
+  line-height: 1;
+  color: rgba(198,168,120,.05);
+  pointer-events: none;
 }
 
-.travel-copy {
-  padding: 48px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.travel-copy h3 {
+.travel-placeholder h3 {
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(29px,3vw,40px);
   font-weight: 500;
-  line-height: 1.3;
-  margin: 0 0 20px;
+  font-size: clamp(29px,4vw,43px);
+  line-height: 1.25;
+  margin: 0 0 22px;
+  position: relative;
+  z-index: 1;
 }
 
-.travel-copy p {
+.travel-placeholder p {
   color: var(--muted);
+  font-size: 16px;
+  max-width: 650px;
+  position: relative;
+  z-index: 1;
 }
 
-.location {
+.coming-soon {
+  display: inline-block;
+  margin-top: 20px;
   color: var(--gold);
-  font-size: 13px;
-  margin-top: 15px;
-}
-
-.note {
-  text-align: center;
-  color: var(--muted);
-  margin-top: 32px;
-  font-size: 14px;
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* ====================================
@@ -589,7 +598,7 @@ footer a {
 }
 
 /* ====================================
-   SCROLL ANIMATIONS
+   ANIMATIONS
 ==================================== */
 
 .reveal {
@@ -608,15 +617,6 @@ footer a {
 ==================================== */
 
 @media(max-width:950px) {
-
-  .hero-grid {
-    gap: 30px;
-  }
-
-  .hero-photo img {
-    height: 490px;
-  }
-
   .about-grid {
     gap: 40px;
   }
@@ -624,7 +624,6 @@ footer a {
   .navlinks {
     gap: 14px;
   }
-
 }
 
 /* ====================================
@@ -668,23 +667,26 @@ footer a {
   }
 
   .hero {
-    min-height: auto;
-    padding: 125px 0 70px;
-  }
-
-  .hero-grid,
-  .about-grid,
-  .travel-grid,
-  .interest-grid {
-    grid-template-columns: 1fr;
+    min-height: 610px;
+    padding: 130px 0 80px;
   }
 
   .hero h1 {
-    font-size: clamp(60px,14vw,78px);
+    font-size: clamp(62px,14vw,85px);
   }
 
-  .hero-photo img {
-    height: 480px;
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero::before {
+    right: -30%;
+    top: 18%;
+  }
+
+  .about-grid,
+  .interest-grid {
+    grid-template-columns: 1fr;
   }
 
   .about-heading {
@@ -695,13 +697,8 @@ footer a {
     grid-template-columns: 1fr;
   }
 
-  .travel-photo img {
-    min-height: 340px;
-    max-height: 440px;
-  }
-
-  .travel-copy {
-    padding: 30px;
+  .travel-placeholder {
+    padding: 35px 27px;
   }
 
   .visitor-top {
@@ -726,11 +723,9 @@ footer a {
     flex-direction: column;
     text-align: center;
   }
-
 }
 
 @media(prefers-reduced-motion:reduce) {
-
   html {
     scroll-behavior: auto;
   }
@@ -740,7 +735,6 @@ footer a {
     transform: none;
     transition: none;
   }
-
 }
 
 </style>
@@ -786,13 +780,14 @@ footer a {
 
 <!-- ====================================
      HOMEPAGE
+     NO PERSONAL PHOTO
 ==================================== -->
 
 <section class="hero" id="home">
 
-  <div class="container hero-grid">
+  <div class="container">
 
-    <div>
+    <div class="hero-content">
 
       <span class="eyebrow">
         Welcome to my little corner of the internet
@@ -816,31 +811,15 @@ footer a {
         and bits of life along the way.
       </p>
 
-      <a class="btn" href="#about">
-        Get to Know Me ↗
-      </a>
+      <div class="hero-buttons">
 
-    </div>
+        <a class="btn" href="#about">
+          Get to Know Me ↗
+        </a>
 
-    <!-- MONACO MAIN PHOTO -->
-
-    <div class="hero-photo">
-
-      <img
-        src="monaco.jpg"
-        alt="Zach enjoying a moment in Monaco"
-        fetchpriority="high"
-      >
-
-      <div class="photo-label">
-
-        <strong>
-          A Moment in Monaco
-        </strong>
-
-        <small>
-          Places, people and memories.
-        </small>
+        <a class="btn btn-outline" href="#travel">
+          My Travel Journal ↓
+        </a>
 
       </div>
 
@@ -1005,79 +984,65 @@ footer a {
 
 <!-- ====================================
      TRAVEL JOURNAL
+     NO MONACO STORY
 ==================================== -->
 
-<section id="travel">
+<section class="travel" id="travel">
 
   <div class="container">
 
-    <span class="eyebrow">
-      02 / My Travel Journal
-    </span>
+    <div class="travel-intro reveal">
 
-    <h2 class="section-heading">
-      Places I've Been.
-      <span class="gold">
-        Stories I've Collected.
+      <span class="eyebrow">
+        02 / My Travel Journal
       </span>
-    </h2>
 
-    <p class="section-description">
-      Some places leave you with photographs.
-      Others leave you with stories.
-      Here's a little of both, from familiar
-      streets in Malaysia to places further away.
-    </p>
-
-    <article class="travel-grid reveal">
-
-      <div class="travel-photo">
-
-        <img
-          src="monaco.jpg"
-          alt="Zach in Monaco"
-          loading="lazy"
-        >
-
-      </div>
-
-      <div class="travel-copy">
-
-        <span class="eyebrow">
-          Travel Moments
+      <h2 class="section-heading">
+        Places I've Been.
+        <span class="gold">
+          Stories I've Collected.
         </span>
+      </h2>
 
-        <h3>
-          A Little Moment in Monaco.
-        </h3>
+      <p class="section-description">
+        Some places leave you with photographs.
+        Others leave you with stories.
+        Here's a little of both, from familiar
+        streets in Malaysia to places further away.
+      </p>
 
-        <p>
-          Not every travel memory needs to
-          be about visiting a famous attraction.
-          Sometimes it's about finding a
-          comfortable spot, taking in the
-          surroundings and enjoying where you are.
-        </p>
+    </div>
 
-        <p>
-          This is one of those moments
-          from my time in Monaco.
-          Another photograph, another place
-          and another memory for the collection.
-        </p>
+    <div class="travel-placeholder reveal">
 
-        <div class="location">
-          📍 Monaco
-        </div>
+      <span class="eyebrow">
+        My Travel Journal
+      </span>
 
-      </div>
+      <h3>
+        Every journey has
+        a story to tell.
+      </h3>
 
-    </article>
+      <p>
+        I've always enjoyed exploring new places,
+        discovering different cultures and
+        experiencing the little things that
+        make every destination special.
+      </p>
 
-    <p class="note">
-      More photographs, destinations and
-      travel stories will find their way here.
-    </p>
+      <p>
+        I'll be sharing photographs,
+        travel experiences, favourite memories
+        and a few stories collected along
+        the way.
+      </p>
+
+      <span class="coming-soon">
+        More Stories Coming Soon
+      </span>
+
+    </div>
 
   </div>
 
@@ -1478,7 +1443,7 @@ footer a {
 
 <script>
 
-/* COPYRIGHT YEAR */
+/* AUTOMATIC COPYRIGHT YEAR */
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
@@ -1528,7 +1493,7 @@ navlinks.querySelectorAll("a").forEach(function(link) {
 });
 
 
-/* SCROLL ANIMATION */
+/* SCROLL REVEAL ANIMATION */
 
 const revealElements =
   document.querySelectorAll(".reveal");
